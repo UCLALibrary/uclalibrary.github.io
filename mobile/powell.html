@@ -157,6 +157,8 @@
 
 				var scrollTo = $('#'+dayOfWeek).position().left;
 				$('#timings').animate({'scrollLeft': scrollTo}, 800);
+				$('#'+dayOfWeek).css("background-color", '#1AA1ED');
+				$('#'+dayOfWeek).find('.date').css("color", 'white');
 
 
 			});
