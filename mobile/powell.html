@@ -145,12 +145,20 @@
 					return [StartDate];
 				}
 
-				var Dates = new Date().getWeek();
+				var Dates = new Date();
+				var dayOfWeek = weekday[Dates.getDay()-1];
+
+				Dates = Dates.getWeek();
 				var startOfWeek = Dates[0].getDate();
 
 				for (var i = 0; i < weekday.length; i++) {
 					$("#" + weekday[i] + " .date").html(startOfWeek+i);
 				};
+
+				var scrollTo = $('#'+dayOfWeek).position().left;
+				$('#timings').animate({'scrollLeft': scrollTo}, 800);
+
+
 			});
 		});
 	</script>
