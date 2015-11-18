@@ -1,0 +1,114 @@
+html {
+	width: 100%;
+	font-family: 'Helvetica', Arial, serif;
+	font-weight: lighter;
+}
+
+body {
+	width: 100%;
+	position: absolute;
+	margin: 0px ! important;
+	background-color: #1AA1ED;
+	padding-bottom: 30px;
+}
+
+.title {
+	margin-top: 25px;
+	margin-bottom: 15px; 
+	color : white;
+	text-align: center;
+	font-size: 2em;
+}
+
+.inherit {
+	color: inherit;
+}
+
+#libraries {
+	width : 80%;
+	margin: 10px auto;
+	background-color: white;
+	border-radius: 10px;
+	color: #1AA1ED;
+	min-height: 600px;
+	padding: 0;
+	padding-bottom: 35px;
+}
+
+.inner-library {
+	padding-top: 35px;
+	padding-bottom: 30px;
+}
+
+.library {
+	list-style: none;
+	margin-bottom: 5px;
+	padding: 0 5%;
+}
+
+.name {
+	display: inline-block;
+	float: left;
+	margin-right: 10%;
+	font-size: 1.7em;
+	margin-bottom: 0;
+	line-height: .9em;
+	width: 63%;
+	white-space:nowrap;
+	overflow: hidden;
+}
+
+.time {
+	margin-top: 0;
+	font-size: .57em;
+	color: #898989;
+}
+
+.meta {
+	text-align: right;
+	display: inline-block;
+	width : 27%;
+	float : right;
+}
+
+.divider {
+	clear: both;
+	width: 90%;
+	display: block;
+	top: 5px;
+	position: relative;
+    height: 2px;
+    border: 0;
+    background-color: #1AA1ED;
+}
+
+.libpage {
+	color: inherit;
+}
+
+.close {
+	color: #FA4F4E !important;
+} 
+
+.open {
+	color: #66D862 !important;
+}
+
+.soon {
+	color: #FAED18 !important;
+}
+
+.circ {
+	width : 10%;
+	font-size: 2em;
+	margin-top: 0;
+	margin: 0 10px;
+	margin-right: 18px;
+	color: white;
+}
+
+.link {
+	margin-top: 0;
+	margin: 0 7px !important;
+	width : 10%;
+}

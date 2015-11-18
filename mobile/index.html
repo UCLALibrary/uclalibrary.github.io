@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UCLA Mobile | Library</title>
+		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" /> 
+		<link rel="stylesheet" href="css/font/font.css" type="text/css" media="screen" /> 
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<!-- <meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+		<meta name="apple-itunes-app" content="app-id=771141588, app-argument=myURL"/> -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	</head>
+
+
+	<body>
+		<div id="navbar" class="title">Libraries</div>
+
+		<ul id="libraries">
+			<a class="inherit" href="arts.html">
+				<li class="library">
+					<div id="5" class="inner-library">
+						<div class="name">Arts Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="biomed.html">
+				<li class="library">
+					<div id="1" class="inner-library">
+						<div class="name">Biomedical Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="eal.html">
+				<li class="library">
+					<div id="10" class="inner-library">
+						<div class="name">East Asian Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="law.html">
+				<li class="library">
+					<div id="2" class="inner-library">
+						<div class="name">Law Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="lsc.html">
+				<li class="library">
+					<div id="3" class="inner-library">
+						<div class="name">Library Special Collections <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+				<a class="inherit" href="management.html">
+				<li class="library">
+					<div id="14" class="inner-library">
+						<div class="name">Management Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="music.html">
+				<li class="library">
+					<div id="16" class="inner-library">
+						<div class="name">Music Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="powell.html">
+				<li class="library">
+					<div id="7" class="inner-library">
+						<div class="name">Powell Library <br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="yrl.html">
+				<li class="library">
+					<div id="20" class="inner-library">
+						<div class="name">Research Library (YRL)<br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="sel.html">
+				<li class="library">
+					<div id="25" class="inner-library">
+						<div class="name">Science and Engineering Library<br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+			<a class="inherit" href="srl.html">
+				<li class="library">
+					<div id="27" class="inner-library">
+						<div class="name">Southern Regional Library Facility<br /> <span class="time">&nbsp;</span></div>
+						<div class="meta">
+							<i class="circ fa fa-circle fa-2x"></i>
+							<i class="link fa fa-angle-right fa-2x"></i>
+						</div>
+					</div>
+				</li>
+			</a>
+			<hr class="divider">
+		</ul>
+
+	</body>
+
+	<script type="text/javascript">
+		function getTimes(callback) {
+			$.getJSON("http://anumat.com/hours", function(response) {
+				return callback(response);
+			}).fail(function(jqXHR, textStatus, errorThrown) { alert("Couldn't fetch library timings."); });
+		}
+
+		$(function() {
+			getTimes(function(times) {
+				var d = new Date();
+				var currentMinutes = d.getHours()*60+d.getMinutes();
+				var weekday = new Array(7);
+				weekday[0]=  "sunday";
+				weekday[1] = "monday";
+				weekday[2] = "tuesday";
+				weekday[3] = "wednesday";
+				weekday[4] = "thursday";
+				weekday[5] = "friday";
+				weekday[6] = "saturday";
+				var n = weekday[d.getDay()];
+
+				for (var i = 0; i < times.length; i++) {
+					openTime = times[i][n].open;
+					closeTime = times[i][n].close;
+					correctTime = openTime + " - " + closeTime;
+					$("#" + times[i].id + " .name .time").html(correctTime);
+					open = openTime.substring(0, openTime.length-3);
+					openDiv = openTime.substring(openTime.length-2);
+					close = closeTime.substring(0, closeTime.length-3);
+					closeDiv = closeTime.substring(closeTime.length-2);
+					open = open.split(":");
+					close = close.split(":");
+					if (openDiv === "PM" || open[0] === "12") {
+						open[0] = (Number(open[0]) + 12);
+					}
+					if (closeDiv === "PM" || close[0] === "12") {
+						close[0] = (Number(close[0]) + 12);
+					}
+					openMinutes = 60*Number(open[0]) + Number(open[1]);
+					closeMinutes = 60*Number(close[0]) + Number(close[1]);
+					if (currentMinutes > openMinutes && currentMinutes < closeMinutes) {
+						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('close').addClass('open');
+					}
+					if (currentMinutes > openMinutes && closeMinutes - currentMinutes < 60) {
+						$("#" + times[i].id + " .meta .circ").removeClass('close').removeClass('open').addClass('soon');
+					}
+					if (currentMinutes < openMinutes ||  currentMinutes > closeMinutes) {
+						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('open').addClass('close');
+					}
+				}
+			});
+		});
+	</script>
+
+</html>

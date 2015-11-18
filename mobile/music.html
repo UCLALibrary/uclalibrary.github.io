@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UCLA Mobile | Library</title>
+		<link rel="stylesheet" href="css/library.css" type="text/css" media="screen" /> 
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+		<!-- <meta name="apple-itunes-app" content="app-id=771141588, app-argument=myURL"/> -->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<style type="text/css">
+			#image {
+				left: 0;
+				right: 0;
+				z-index: 1;
+				width: 100%;
+				height: 300px;
+				background: url("Images/music.jpg") no-repeat center center;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				-webkit-filter: blur(3px);
+				-moz-filter: blur(3px);
+				-o-filter: blur(3px);
+				-ms-filter: blur(3px);
+				filter: blur(3px);
+				display: block;
+			}
+		</style>
+	</head>
+	<body id="16">
+		<header>
+			<div id="image"></div>
+			<div id="content">
+				<div id="back"><a href="index.html"><i class="link fa fa-angle-left fa-2x"></i></a></div>
+				<div id="title">Music Library</div>
+				<div id="laptops">
+					<span id="num">15</span> <br />LAPTOPS
+				</div>
+			</div>
+		</header>
+		<div id="banner">Announcement</div>
+		<div id="timings">
+			<ul id="times">
+				<li id="monday" class="card">
+					<div class="day">Monday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+				<li id="tuesday" class="card">
+					<div class="day">Tuesday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+				<li id="wednesday" class="card">
+					<div class="day">Wednesday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+				<li id="thursday" class="card">
+					<div class="day">Thursday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+				<li id="friday" class="card">
+					<div class="day">Friday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+				<li id="saturday" class="card">
+					<div class="day">Saturday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+				<li id="sunday" class="card">
+					<div class="day">Sunday</div>
+					<div class="date"></div>
+					<div class="open"></div>
+					<div class="close"></div>
+				</li>
+			</ul>
+		</div>
+		<div id="map">
+			<div style="overflow:hidden;">
+				<div id="gmap_canvas" style="height:322px; width:100%;"></div>
+			</div>
+			<div id="meta">
+				<div id="address">
+					1102 Schoenberg Music Building, Los Angeles, CA, 90095, USA
+				</div>
+			</div>
+		</div>
+	</body>
+
+
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+	<script type="text/javascript">
+		function getTimes(callback) {
+			$.getJSON("http://anumat.com/hours", function(response) {
+				return callback(response);
+			}).fail(function(jqXHR, textStatus, errorThrown) { alert("Couldn't fetch library timings."); });
+		}
+
+		$(function() {
+			var libId = $("body").attr('id');
+
+			var weekday = new Array(7);
+			weekday[0] = "monday";
+			weekday[1] = "tuesday";
+			weekday[2] = "wednesday";
+			weekday[3] = "thursday";
+			weekday[4] = "friday";
+			weekday[5] = "saturday";
+			weekday[6]=  "sunday";
+
+			var lib;
+
+			getTimes(function(times) {
+				for (var i = 0; i < times.length; i++) {
+					if (Number(times[i].id) == Number(libId)) {
+						lib = times[i];
+						break;
+					}
+				};
+
+				for (var i = 0; i < weekday.length; i++) {
+					$("#"+weekday[i] + " .open").html(lib[weekday[i]].open);
+					$("#"+weekday[i] + " .close").html(lib[weekday[i]].close);
+				};
+
+				Date.prototype.getWeek = function(start) {
+					start = start || 0;
+					var today = new Date(this.setHours(0, 0, 0, 0));
+					var day = today.getDay() - start;
+					var date = today.getDate() - day;
+
+					var StartDate = new Date(today.setDate(date +1));
+					return [StartDate];
+				}
+
+				var Dates = new Date().getWeek();
+				var startOfWeek = Dates[0].getDate();
+
+				for (var i = 0; i < weekday.length; i++) {
+					$("#" + weekday[i] + " .date").html(startOfWeek+i);
+				};
+			});
+		});
+	</script>
+	
+
+	<script type="text/javascript">
+		function init_map() {
+			var myOptions = {
+				zoom:15,
+				// draggable: false,
+				scrollwheel: false,
+				// panControl: false,
+				center:new google.maps.LatLng(34.07094, -118.440417),
+				disableDefaultUI: true,
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+			
+			map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
+			
+			marker = new google.maps.Marker({ map: map,position: new google.maps.LatLng(34.07094, -118.440417) });
+			
+			infowindow = new google.maps.InfoWindow({content:"<b>Music Library</b><br/>1102 Schoenberg Music Building, Los Angeles, CA, 90095, USA" });
+			
+			google.maps.event.addListener(marker, "click", function() {
+				infowindow.open(map,marker);
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', init_map);
+	</script>
+</html>
