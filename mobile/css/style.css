@@ -20,6 +20,15 @@ body {
 	font-size: 2em;
 }
 
+.title p {
+	margin-top: 0;
+}
+
+#logo {
+	height: 35px;
+	margin-bottom: 0;
+}
+
 .inherit {
 	color: inherit;
 }
@@ -49,25 +58,25 @@ body {
 .name {
 	display: inline-block;
 	float: left;
-	margin-right: 10%;
-	font-size: 1.7em;
+	font-size: 4.6vw;
 	margin-bottom: 0;
 	line-height: .9em;
-	width: 63%;
+	width: 77%;
 	white-space:nowrap;
-	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: scroll;
 }
 
 .time {
 	margin-top: 0;
-	font-size: .57em;
+	font-size: .7em;
 	color: #898989;
 }
 
 .meta {
 	text-align: right;
 	display: inline-block;
-	width : 27%;
+	width : 23%;
 	float : right;
 }
 
@@ -112,3 +121,10 @@ body {
 	margin: 0 7px !important;
 	width : 10%;
 }
+
+@media screen and (min-width: 480px) {
+    .name {
+        font-size: 1.7em;
+    }
+}
+
