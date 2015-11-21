@@ -60,8 +60,8 @@ body {
 	float: left;
 	font-size: 4.6vw;
 	margin-bottom: 0;
-	line-height: 1em;
-	width: 77%;
+/*	line-height: 1em;
+*/	width: 77%;
 	white-space:nowrap;
 	overflow-y: hidden;
 	overflow-x: scroll;
