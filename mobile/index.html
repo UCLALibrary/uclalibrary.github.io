@@ -181,8 +181,8 @@
 					if (openTime === "closed") {
 						$("#" + times[i].id + " .name .time").html("Closed");
 						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('open').addClass('close fa-thumbs-down');
-						break;
-					}					
+						continue;
+					}
 					correctTime = openTime + " - " + closeTime;
 					$("#" + times[i].id + " .name .time").html(correctTime);
 					open = openTime.substring(0, openTime.length-3);
