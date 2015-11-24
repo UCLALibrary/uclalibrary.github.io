@@ -199,11 +199,11 @@
 					}
 					openMinutes = 60*Number(open[0]) + Number(open[1]);
 					closeMinutes = 60*Number(close[0]) + Number(close[1]);
-					if (currentMinutes > openMinutes && currentMinutes < closeMinutes) {
-						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('close').addClass('open fa-thumbs-up');
-					}
 					if (currentMinutes > openMinutes && closeMinutes - currentMinutes < 60) {
 						$("#" + times[i].id + " .meta .circ").removeClass('close').removeClass('open').addClass('soon fa-exclamation-triangle');
+					}
+					if (currentMinutes > openMinutes && currentMinutes < closeMinutes) {
+						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('close').addClass('open fa-thumbs-up');
 					}
 					if (currentMinutes < openMinutes ||  currentMinutes > closeMinutes) {
 						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('open').addClass('close fa-thumbs-down');
