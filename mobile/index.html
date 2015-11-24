@@ -203,7 +203,7 @@
 						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('close').addClass('open fa-thumbs-up');
 					}
 					if (currentMinutes > openMinutes && closeMinutes - currentMinutes < 60) {
-						$("#" + times[i].id + " .meta .circ").removeClass('close').removeClass('open').addClass('soon fa-exclamation-triangle');
+						$("#" + times[i].id + " .meta .circ").removeClass('close').removeClass('fa-circle open fa-thumbs-up').addClass('soon fa-exclamation-triangle');
 					}
 					if (currentMinutes < openMinutes ||  currentMinutes > closeMinutes) {
 						$("#" + times[i].id + " .meta .circ").removeClass('soon').removeClass('open').addClass('close fa-thumbs-down');
