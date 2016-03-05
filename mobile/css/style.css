@@ -117,6 +117,11 @@ body {
 	color: white;
 }
 
+.button {
+	width: 30px !important;
+	height: 30px !important;
+}
+
 .link {
 	margin-top: 0;
 	margin: 0 7px !important;
