@@ -16,7 +16,64 @@ container.parentNode.replaceChild(element,container);}
 return element;}catch(e){if(typeof console!=="undefined"&&typeof console.error!=="undefined"){console.error("Error creating Eager element",e);}}}})();;(function(){Eager.matchPage=function(patterns){if(!patterns||!patterns.length){return true;}
 if(window.Eager&&Eager.proxy&&Eager.proxy.originalURL){var url=Eager.proxy.originalURL.parsed;var loc=url.host+url.path;}else{var loc=document.location.host+document.location.pathname;}
 for(var i=0;i<patterns.length;i++){var re=new RegExp(patterns[i],'i');if(re.test(loc)){return true;}}
-return false;}})();;Eager.installs["preview"]={appId:"HPllXXlbuYyF",scope:{}};;Eager.installs["preview"].options={"backgroundColor":"#ffffff","buttonColor":"#000000","buttonText":"","coverColor":"#000000","items":[{"href":"","itemType":"label","labelText":"Menu","linkText":""},{"href":"#","icon":"user","itemType":"link","labelText":"","linkText":"Ask a Librarian","targetBlank":true},{"href":"http://catalog.library.ucla.edu/vwebv/login","icon":"home2","itemType":"link","labelText":"","linkText":"My account","targetBlank":true},{"href":"http://guides.library.ucla.edu","icon":"file-empty","itemType":"link","labelText":"","linkText":"Research Guides","targetBlank":true},{"href":"http://catalog.library.ucla.edu/","icon":"search","itemType":"link","labelText":"","linkText":"Search Library Catalog","targetBlank":true}],"labelColor":"#888888","linkColor":"#000000","position":"left","showCover":true};;if(Eager.matchPage(Eager.installs['preview'].URLPatterns)){(function(){if(!document.addEventListener||!document.documentElement.setAttribute){return;}
+return false;}})();;Eager.installs["preview"]={appId:"HPllXXlbuYyF",scope:{}};;Eager.installs["preview"].options={
+	"backgroundColor": "#ffffff",
+	"buttonColor": "#000000",
+	"buttonText": "",
+	"coverColor": "#000000",
+	"items": [
+		{
+		"href": "",
+		"itemType": "label",
+		"labelText": "Menu",
+		"linkText": ""
+		}, 
+		{
+		"href": "chat.html",
+		"icon": "user",
+		"itemType": "link",
+		"labelText": "",
+		"linkText": "Ask a Librarian",
+		"targetBlank": true
+		}, 
+		{
+		"href": "http://catalog.library.ucla.edu/vwebv/login",
+		"icon": "home2",
+		"itemType": "link",
+		"labelText": "",
+		"linkText": "My account",
+		"targetBlank": true
+		},
+		{
+		"href": "http://guides.library.ucla.edu",
+		"icon": "file-empty",
+		"itemType": "link",
+		"labelText": "",
+		"linkText": "Research Guides",
+		"targetBlank": true
+		},
+		{
+			"href":"http://catalog.library.ucla.edu/",
+			"icon":"search",
+			"itemType":"link",
+			"labelText":"",
+			"linkText":"Search Library Catalog",
+			"targetBlank":true
+		},
+		{
+			"href":"https://www.library.ucla.edu/",
+			"icon":"search",
+			"itemType":"link",
+			"labelText":"",
+			"linkText":"Search Library Catalog",
+			"targetBlank":true
+		}
+	],
+	"labelColor":"#888888",
+	"linkColor":"#000000",
+	"position":"right",
+	"showCover":true
+};;if(Eager.matchPage(Eager.installs['preview'].URLPatterns)){(function(){if(!document.addEventListener||!document.documentElement.setAttribute){return;}
 var options=Eager.installs['preview'].options;var pointerEventsSupport;(function(){var el=document.createElement('x');el.style.cssText='pointer-events:auto';pointerEventsSupport=el.style.pointerEvents==='auto';})();var navEl=document.createElement('eager-side-nav');var buttonEl=document.createElement('eager-side-nav-button');var setPosition=function(){navEl.setAttribute('eager-side-nav-position',options.position);buttonEl.setAttribute('eager-side-nav-position',options.position);};setPosition();var coverEl=document.createElement('eager-side-nav-cover');var style;var addStyles=function(){style=document.createElement('style');renderStyles();document.body.appendChild(style);};var renderStyles=function(){style.innerHTML=''+'eager-side-nav > a {'+'color: '+options.linkColor+' !important'+'}'+'eager-side-nav-label {'+'color: '+options.labelColor+' !important'+'}'+'eager-side-nav {'+'background: '+options.backgroundColor+' !important'+'}'+'eager-side-nav-button:after {'+'content: "'+options.buttonText.replace(/"/g,'\\"')+'"'+'}'+'eager-side-nav-button-bar {'+'background: '+options.buttonColor+' !important'+'}'+'eager-side-nav-button[eager-side-nav-opened="true"] eager-side-nav-button-bar {'+'background: '+options.linkColor+' !important'+'}'+
 (options.showCover?''+'eager-side-nav-cover {'+'background: '+options.coverColor+' !important'+'}':'')+'';};var addCover=function(){if(pointerEventsSupport){document.body.appendChild(coverEl);}};var addNavItem=function(item){var itemEl;if(item.itemType==='link'){itemEl=document.createElement('a');itemEl.appendChild(document.createTextNode(item.linkText));itemEl.setAttribute('href',item.href||'');if(item.targetBlank===true){itemEl.setAttribute('target','_blank');}
 if(item.icon&&item.icon!=='none'){itemEl.setAttribute('eager-side-nav-icon',item.icon);}}else{itemEl=document.createElement('eager-side-nav-label');itemEl.appendChild(document.createTextNode(item.labelText));}
