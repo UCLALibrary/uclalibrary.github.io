@@ -3,6 +3,7 @@
 	<head>
 		<title>UCLA Mobile | Library</title>
 		<link rel="stylesheet" href="css/library.css" type="text/css" media="screen" /> 
+		<script src="js/sidebar2.js" type="text/javascript" charset="utf-8" async defer></script>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
 		<!-- <meta name="apple-itunes-app" content="app-id=771141588, app-argument=myURL"/> -->
@@ -97,6 +98,11 @@
 			</div>
 		</div>
 	</body>
+	<script>
+		$(function() {
+			$('[data-eager-element="true"]').css("display", "none");
+		});
+	</script>
 
 
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>

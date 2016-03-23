@@ -96,7 +96,7 @@ Eager.installs["preview"] = {
 };;
 Eager.installs["preview"].options = {
     "backgroundColor": "#ffffff",
-    "buttonColor": "#000000",
+    "buttonColor": "#ffffff",
     "buttonText": "",
     "coverColor": "#000000",
     "items": [{
