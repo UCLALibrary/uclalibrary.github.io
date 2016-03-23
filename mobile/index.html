@@ -4,7 +4,6 @@
 		<title>UCLA Mobile | Library</title>
 		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" /> 
 		<script src="js/sidebar.js" type="text/javascript" charset="utf-8" async defer></script>
-		<link rel="stylesheet" href="css/font/font.css" type="text/css" media="screen" /> 
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<meta name="viewport" content="height=device-height,width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -205,10 +204,17 @@
 				weekday[5] = "friday";
 				weekday[6] = "saturday";
 				var n = weekday[d.getDay()];
-
+				
+				console.log(times);
+				
 				for (var i = 0; i < times.length; i++) {
 					openTime = times[i][n].open;
 					closeTime = times[i][n].close;
+					if (openTime === "12:01 AM" && closeTime === "11:59 PM") {
+						$("#" + times[i].id + " .name .time").html("Open 24/7");
+						$("#" + times[i].id + " .name .round").removeClass('cls').removeClass('cl').addClass('op').html("Open");
+						continue;
+					}
 					if (openTime === "closed") {
 						$("#" + times[i].id + " .name .time").html("Closed");
 						$("#" + times[i].id + " .name .round").removeClass('cls').removeClass('op').addClass('cl').html("Closed");
