@@ -60,6 +60,10 @@ header {
 	display: none;
 }
 
+a {
+	color: inherit;
+}
+
 #banner {
 	width 100%;
 	white-space:nowrap;
