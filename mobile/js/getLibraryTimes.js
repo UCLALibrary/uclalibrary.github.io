@@ -25,7 +25,12 @@ function getTimes(callback) {
 						break;
 					}
 				};
-
+				
+				if (lib.laptops > 0) {
+					$("#laptops").show("slow");
+					$("#num").html(lib.laptops);
+				}
+				
 				for (var i = 0; i < weekday.length; i++) {
 					$("#"+weekday[i] + " .open").html(lib[weekday[i]].open);
 					$("#"+weekday[i] + " .close").html(lib[weekday[i]].close);
@@ -56,6 +61,7 @@ function getTimes(callback) {
 				$('#'+dayOfWeek).css("background-color", '#1AA1ED');
 				$('#'+dayOfWeek).find('.date').css("color", 'white');
 
+				
 
 			});
 		});
