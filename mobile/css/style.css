@@ -12,6 +12,15 @@ body {
 	padding-bottom: 30px;
 }
 
+.top {
+	width: 100%;
+	display: inline-block;
+}
+
+.bottom {
+	width: 100%;
+}
+
 .title {
 	margin-top: 25px;
 	margin-bottom: 15px; 
@@ -61,8 +70,6 @@ body {
 	font-size: 4.6vw;
 	margin-bottom: 0;
 	padding-top: 2px;
-/*	line-height: 1em;
-*/	width: 100%;
 	white-space:nowrap;
 	overflow-y: hidden;
 	overflow-x: scroll;
@@ -70,24 +77,22 @@ body {
 
 .time {
 	margin-top: 0;
-	font-size: .7em;
+	font-size: 1.2em;
 	color: #898989;
+	float: left;
+	top: 2px;
 }
 
 .meta {
 	text-align: right;
-	display: inline-block;
-/*	width : 23%;*/
-	float : right;
-	position: relative;
-	top: -70px;
+/*	display: inline-block;
+*/	float : right;
 }
 
 .divider {
 	clear: both;
 	width: 90%;
 	display: block;
-	top: -15px;
 	position: relative;
     height: 2px;
     border: 0;
@@ -121,7 +126,6 @@ body {
 } 
 
 .round {
-	font-size: .7em;
 	float: right;
 	display: inline-block;
 	padding: 4px 9px;
@@ -159,37 +163,55 @@ body {
 	width : 10%;
 }
 
-@media screen and (min-width: 540px) {
+@media screen and (min-width: 620px) {
     .name {
         font-size: 1.7em;
     }
 }
 
-@media screen and (max-width: 540px) {
-    .library {
-        margin-top: -10px;
+@media screen and (max-width: 620px) {
+    .name {
+    	width: 95%;
+		font-size: 1.2em;
     }
 	.meta {
-		font-size: 80%;
-	}
-
-	.meta {
-		position: relative;
-		top: -17vw;
-	}
-	
-	.name {
-		position: relative;
-		top: -14px;
-		padding-bottom: 5px;
+		width: 5%;
 	}
 	.time {
-		position: relative;
-		top: 3px;
+		font-size: 1em;
 	}
 	.round {
-		position: relative;
-		top: 5px;
+		font-size: .95em;
+	}
+}
+
+@media screen and (max-width: 415px) {
+    .name {
+		font-size: 1em;
+    }
+	.meta {
+		font-size: 90%;
+	}
+	.time {
+		font-size: .9em;
+	}
+	.round {
+		font-size: .85em;
+	}
+}
+
+@media screen and (max-width: 321px) {
+    .name {
+		font-size: .9em;
+    }
+	.meta {
+		font-size: 90%;
+	}
+	.time {
+		font-size: .9em;
+	}
+	.round {
+		font-size: .85em;
 	}
 }
 
